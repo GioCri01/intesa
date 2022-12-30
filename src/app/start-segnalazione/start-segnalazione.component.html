@@ -1,0 +1,24 @@
+<app-header></app-header>
+<main class="container my-5">
+
+
+  <div class="container">
+    <h2>Tipologia segnalazione</h2>
+  <h6 class="my-4">Effettua un’unica segnalazione utilizzando la prima tipologia che corrisponde alla casistica che vuoi segnalare.
+    Utilizza le ultime tre tipologie di aggiornamento, solo se devi segnalare degli aggiornamenti per una segnalazione fatta in precedenza.</h6>
+    <form class="w-50 ">
+      <label class="my-3" >Selezionare il tipo di segnalazione che si vuole effettuare</label>
+      <select [(ngModel)]="optionSelected" name="optionSelected"  class="form-select" >
+        <option   selected></option>
+        <option   *ngFor="let item of select"  [value]=" item.value " >{{ item.descr  }} </option>
+
+      </select>
+    </form>
+    <div class="d-flex justify-content-end w-100">
+      <button class=" btn btn-lg btn-success my-5  "  [disabled]="optionSelected == ''"  (click)="goTo(optionSelected)" >Avanti</button>
+    </div>
+
+  </div>
+</main>
+
+<app-footer></app-footer>
